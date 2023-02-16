@@ -1,4 +1,4 @@
-" plug-vim
+"plug-vim
 " tyme & setup of neovim
 :set number
 :set relativenumber 
@@ -22,15 +22,18 @@ call plug#begin()
  Plug 'https://github.com/ap/vim-css-color' 
  Plug 'https://github.com/preservim/tagbar' "TagbarTog
  Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
- Plug 'https://github.com/neoclide/coc.nvim' 
+ " Plug 'https://github.com/neoclide/coc.nvim' 
  Plug 'https://github.com/gruvbox-community/gruvbox' "theme color
- Plug 'https://github.com/AndrewRadev/tagalong.vim' "ferme the tage change
- Plug 'https://github.com/neoclide/coc-pairs' 
- " goyo plauging
+ Plug 'https://github.com/mattn/emmet-vim' "emmet-vim-pluging
+ Plug 'https://github.com/jiangmiao/auto-pairs' "bracket ato comlite
+ Plug 'https://github.com/xiyaowong/nvim-transparent' "transparent
 
 call plug#end()
 
 :colorscheme gruvbox
+
+"transparent
+let g:transparent_enabled = v:true 
 
 " key controle 
 nnoremap <C-f> :NERDTreeFocus<CR>
@@ -50,4 +53,3 @@ let g:user_emmet_leader_key=','
 
 " search in vim 
 nnoremap <C-s> :Ag<CR>
-
