@@ -2,7 +2,7 @@
 alias tree='tree -a -I .git'
 
 # Add flags to existing aliases.
-alias ls="${aliases[ls]:-ls} -A"
+# alias ls="${aliases[ls]:-ls} -A"
 alias ll="ls -alh"
 # alias for apt-get
 alias i="sudo apt-get install"
@@ -13,7 +13,8 @@ alias q="apt search"
 # alias for vim
 alias vi="nvim"
 # alias for git
-alias gad="git add"
-alias gcm="git commit"
-alias gph="git push"
-alias gpll="git pull"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gh="git push"
+alias gl="git pull"
