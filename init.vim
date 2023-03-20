@@ -26,7 +26,7 @@ call plug#begin()
  Plug 'https://github.com/ap/vim-css-color' 
  Plug 'https://github.com/preservim/tagbar' "TagbarTog
  Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
- Plug 'https://github.com/neoclide/coc.nvim' 
+ Plug 'https://github.com/neoclide/coc.nvim' "harde to plugin he need some resorse
  Plug 'https://github.com/gruvbox-community/gruvbox' "theme color
  Plug 'https://github.com/mattn/emmet-vim' "emmet-vim-pluging
  Plug 'https://github.com/jiangmiao/auto-pairs' "bracket ato comlite
