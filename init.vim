@@ -3,16 +3,20 @@
 :set number
 :set relativenumber 
 :set autoindent 
-:set tabstop=4
-:set shiftwidth=4
+:set tabstop=2
+:set shiftwidth=2
 :set smarttab
-:set softtabstop=4
+:set softtabstop=2
 :set mouse=a
 :set nohlsearch
 :set scrolloff=8
 :set signcolumn=yes
 :set omnifunc=htmlcomplete#CompleteTags
 :set nowrap
+:set cursorline
+
+" vim-plugin to install 
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 call plug#begin()
 
@@ -22,34 +26,51 @@ call plug#begin()
  Plug 'https://github.com/ap/vim-css-color' 
  Plug 'https://github.com/preservim/tagbar' "TagbarTog
  Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
- " Plug 'https://github.com/neoclide/coc.nvim' 
+ Plug 'https://github.com/neoclide/coc.nvim' 
  Plug 'https://github.com/gruvbox-community/gruvbox' "theme color
  Plug 'https://github.com/mattn/emmet-vim' "emmet-vim-pluging
  Plug 'https://github.com/jiangmiao/auto-pairs' "bracket ato comlite
  Plug 'https://github.com/xiyaowong/nvim-transparent' "transparent
+ Plug 'https://github.com/tpope/vim-surround' 
 
 call plug#end()
 
 :colorscheme gruvbox
 
+
+" " use <tab> for trigger completion and navigate to the next complete item
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
+
+" inoremap <silent><expr> <Tab>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<Tab>" :
+"       \ coc#refresh()
+
+
 "transparent
 let g:transparent_enabled = v:true 
 
 " key controle 
-nnoremap <C-f> :NERDTreeFocus<CR>
+" nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
 "" nnoremap <C-f> :NERDTreeFind<CR>
 
-" Install & clean PLUGIN
+" Install & clean PLUGIo
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <C-l> :PlugClean<CR>
 "
-nnoremap <C-b> :TagbarToggle<CR>
+" nnoremap <C-b> :TagbarToggle<CR>
 
 " html straction key
 let g:user_emmet_mode='n'
 let g:user_emmet_leader_key=','
 
 " search in vim 
-nnoremap <C-s> :Ag<CR>
+" nnoremap <C-s> :Ag<CR>
+
+" to copy and past
+vnoremap <C-c> "+y

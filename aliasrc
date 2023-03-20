@@ -1,0 +1,62 @@
+# file aliases
+alias project="cd ~/Documents/project"
+alias codeweb="cd ~/Documents/codeweb/project-web"
+alias aliass="vi ~/.config/aliasrc"
+
+# Define aliases.
+
+# === Nav ====
+alias ll="ls -Alh"
+alias ls="ls --color"
+alias ..="cd .."
+alias md="mkdir"
+alias tree='tree -A -C -L 2'
+alias rmd="rm -dri"
+# alias tree='tree -a -I .git'
+# alias ls="${aliases[ls]:-ls} -A"
+# findfile () {
+#   find . -iname "*$1*" -print
+# }
+
+# alias for apt-get
+alias i="sudo nala install"
+alias ug="sudo nala upgrade"
+alias up="sudo nala update"
+alias r="sudo nala remove"
+alias or="sudo nala autoremove"
+alias l="nala list"
+alias fug="sudo nala full-upgrade"
+alias q="nala search"
+
+#==== vim ====
+alias vi="nvim"
+
+#=== git ====
+alias gi="git init"
+alias gst="git status"
+alias gad="git add"
+alias gcm="git commit"
+alias gp="git push"
+alias gpl="git pull"
+alias gpu="git push -u origin main"
+alias gbr="git branch"
+alias grm="git remote"
+alias gsh="git stash"
+alias gshp="git stash pop"
+alias gho="git checkout"
+function Git {
+	git add "$1" && git commit -m "$2"
+}
+function Gst {
+  git status | sed -n '/Your/,/^$/p'
+  git status -s && echo
+  git log --pretty=format:"%h - <%an> %s (%cr)" --date=relative -3 && echo
+}
+# alias Git="/home/danux/./.script/git-script.sh"
+
+
+alias x="echo -e '\e[3;36m -xmodmap true\e[0m'&&xmodmap ~/.script/xmodmaprc"
+# alias ls="echo -e '\e[3;36m -file\e[0m' && ls --color"
+
+export EDITOR=nvim
+export VISUAL="$EDITOR"
