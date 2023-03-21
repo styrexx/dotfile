@@ -19,14 +19,15 @@ alias rmd="rm -dri"
 # }
 
 # alias for apt-get
-alias i="sudo nala install"
-alias ug="sudo nala upgrade"
-alias up="sudo nala update"
-alias r="sudo nala remove"
-alias or="sudo nala autoremove"
-alias l="nala list"
-alias fug="sudo nala full-upgrade"
-alias q="nala search"
+pakege="apt-get"
+alias i="sudo $pakege install"
+alias ug="sudo $pakege upgrade"
+alias up="sudo $pakege update"
+alias r="sudo $pakege remove"
+alias or="sudo $pakege autoremove"
+alias l="apt list"
+alias fug="sudo $pakege full-upgrade"
+alias q="$pakege search"
 
 #==== vim ====
 alias vi="nvim"
