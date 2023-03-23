@@ -1,7 +1,7 @@
 # file aliases
 alias project="cd ~/Documents/project"
 alias codeweb="cd ~/Documents/codeweb/project-web"
-alias aliass="vi ~/.config/aliasrc"
+alias aliasrc="vi ~/.config/aliasrc"
 
 # Define aliases.
 
@@ -11,7 +11,7 @@ alias ls="ls --color"
 alias ..="cd .."
 alias md="mkdir"
 alias tree='tree -A -C -L 2'
-alias rmd="rm -dri"
+alias rmd="rm -drI"
 # alias tree='tree -a -I .git'
 # alias ls="${aliases[ls]:-ls} -A"
 # findfile () {
@@ -34,7 +34,7 @@ alias vi="nvim"
 
 #=== git ====
 alias gi="git init"
-alias gst="git status"
+# alias gst="git status"
 alias gad="git add"
 alias gcm="git commit"
 alias gp="git push"
@@ -48,7 +48,7 @@ alias gho="git checkout"
 function Git {
 	git add "$1" && git commit -m "$2"
 }
-function Gst {
+function gst {
   git status | sed -n '/Your/,/^$/p'
   git status -s && echo
   git log --pretty=format:"%h - <%an> %s (%cr)" --date=relative -3 && echo
