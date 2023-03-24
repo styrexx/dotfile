@@ -26,12 +26,13 @@ call plug#begin()
  Plug 'https://github.com/ap/vim-css-color' 
  Plug 'https://github.com/preservim/tagbar' "TagbarTog
  Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
- Plug 'https://github.com/neoclide/coc.nvim' "harde to plugin he need some resorse
+ Plug 'https://github.com/neoclide/coc.nvim' 
  Plug 'https://github.com/gruvbox-community/gruvbox' "theme color
  Plug 'https://github.com/mattn/emmet-vim' "emmet-vim-pluging
  Plug 'https://github.com/jiangmiao/auto-pairs' "bracket ato comlite
  Plug 'https://github.com/xiyaowong/nvim-transparent' "transparent
  Plug 'https://github.com/tpope/vim-surround' 
+ Plug 'https://github.com/turbio/bracey.vim' "live server bracey after installing go to plugin/bracey.vim and '$ npm install --prefix server' 
 
 call plug#end()
 
@@ -62,7 +63,6 @@ nnoremap <C-n> :NERDTree<CR>
 " Install & clean PLUGIo
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <C-l> :PlugClean<CR>
-"
 " nnoremap <C-b> :TagbarToggle<CR>
 
 " html straction key
@@ -71,6 +71,11 @@ let g:user_emmet_leader_key=','
 
 " search in vim 
 " nnoremap <C-s> :Ag<CR>
-
+"
+nnoremap <C-a> :Bracey<CR>
+nnoremap <C-x> :BraceyStop<CR>
+" some remap
+nnoremap("n", "nzz")
+nnoremap("N", "Nzz")
 " to copy and past
 vnoremap <C-c> "+y
