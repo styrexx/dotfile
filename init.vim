@@ -79,3 +79,8 @@ nnoremap("n", "nzz")
 nnoremap("N", "Nzz")
 " to copy and past
 vnoremap <C-c> "+y
+
+" move in the tab
+nnoremap <C-t>h :tabNext<CR>
+nnoremap <C-t>l :tabnext<CR>
+nnoremap <C-t>o :tabnew
