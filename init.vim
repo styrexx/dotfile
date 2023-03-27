@@ -75,8 +75,10 @@ let g:user_emmet_leader_key=','
 nnoremap <C-a> :Bracey<CR>
 nnoremap <C-x> :BraceyStop<CR>
 " some remap
-nnoremap("n", "nzz")
-nnoremap("N", "Nzz")
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap<C-b> <C-b>zz
+nnoremap<C-d> <C-d>zz
 " to copy and past
 vnoremap <C-c> "+y
 
