@@ -1,19 +1,20 @@
 "plug-vim
 " tyme & setup of neovim
-:set number
-:set relativenumber 
-:set autoindent 
-:set tabstop=2
-:set shiftwidth=2
-:set smarttab
-:set softtabstop=2
-:set mouse=a
-:set nohlsearch
-:set scrolloff=8
-:set signcolumn=yes
-:set omnifunc=htmlcomplete#CompleteTags
-:set nowrap
-:set cursorline
+set number
+set relativenumber 
+set tabstop=2
+set shiftwidth=2
+set autoindent 
+set smarttab
+set softtabstop=2
+set mouse=a
+set nohlsearch
+set scrolloff=8
+set signcolumn=yes
+set omnifunc=htmlcomplete#CompleteTags
+set nowrap
+set cursorline
+set colorcolumn=80
 
 " vim-plugin to install 
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -74,15 +75,21 @@ let g:user_emmet_leader_key=','
 "
 nnoremap <C-a> :Bracey<CR>
 nnoremap <C-x> :BraceyStop<CR>
+
 " some remap
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap<C-b> <C-b>zz
 nnoremap<C-d> <C-d>zz
+
 " to copy and past
 vnoremap <C-c> "+y
 
-" move in the tab
+" move in the tabs
 nnoremap <C-t>h :tabNext<CR>
 nnoremap <C-t>l :tabnext<CR>
-nnoremap <C-t>o :tabnew
+nnoremap <C-t>o :tabnew 
+
+" selection 
+vnoremap J :m'>+1<CR>gv'
+vnoremap K :m'<-2<CR>gv'
