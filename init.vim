@@ -1,5 +1,6 @@
 "plug-vim
 " tyme & setup of neovim
+let mapleader = " "
 set number
 set relativenumber 
 set tabstop=2
@@ -25,15 +26,17 @@ call plug#begin()
  Plug 'https://github.com/preservim/nerdtree' "NERDtree
  Plug 'https://github.com/tpope/vim-commentary' "Commentary plaug gcc & gc
  Plug 'https://github.com/ap/vim-css-color' 
- Plug 'https://github.com/preservim/tagbar' "TagbarTog
- Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
+ " Plug 'https://github.com/junegunn/fzf.vim' "search ingen in fyle
  Plug 'https://github.com/neoclide/coc.nvim' 
  Plug 'https://github.com/gruvbox-community/gruvbox' "theme color
  Plug 'https://github.com/mattn/emmet-vim' "emmet-vim-pluging
  Plug 'https://github.com/jiangmiao/auto-pairs' "bracket ato comlite
  Plug 'https://github.com/xiyaowong/nvim-transparent' "transparent
- Plug 'https://github.com/tpope/vim-surround' 
+ Plug 'https://github.com/tpope/vim-surround' "make isi to put th () or '' or [] or {} ...
  Plug 'https://github.com/turbio/bracey.vim' "live server bracey after installing go to plugin/bracey.vim and '$ npm install --prefix server' 
+ Plug 'https://github.com/sheerun/vim-polyglot' 
+ Plug 'https://github.com/junegunn/goyo.vim' "Goyo Mode for reading 
+ 
 
 call plug#end()
 
@@ -51,15 +54,20 @@ call plug#end()
 "       \ <SID>check_back_space() ? "\<Tab>" :
 "       \ coc#refresh()
 
+" status bar 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
 
-"transparent
+" transparent
 let g:transparent_enabled = v:true 
 
 " key controle 
 " nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 " nnoremap <C-t> :NERDTreeToggle<CR>
-"" nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Install & clean PLUGIo
 nnoremap <C-i> :PlugInstall<CR>
@@ -75,6 +83,7 @@ let g:user_emmet_leader_key=','
 "
 nnoremap <C-a> :Bracey<CR>
 nnoremap <C-x> :BraceyStop<CR>
+
 
 " some remap
 nnoremap n nzz
@@ -93,3 +102,7 @@ nnoremap <C-t>o :tabnew
 " selection 
 vnoremap J :m'>+1<CR>gv'
 vnoremap K :m'<-2<CR>gv'
+
+" prettier formate 
+command! -nargs=0 Prt :CocCommand prettier.forceFormatDocument
+nmap <leader>f  :Prt<CR>

@@ -6,7 +6,7 @@ autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 precmd() { vcs_info }
 # config the vcs-info (document => zshcontrib)
-zstyle ':vcs_info:git:*' formats '[%b]'
+zstyle ':vcs_info:git:*' formats '⌜%b⌟ '
 zstyle 'vcs_info:*' disable bzr cdv darcs mtn svk tla
 zstyle 'vcs_info:*' enable git cvs svn
 
@@ -17,8 +17,9 @@ LS_COLORS='di=1;35:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90:*.pn
 #~Default PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}cd-wb %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt PROMPT_SUBST
 # PROMPT='%{$fg[red]%}[%{$fg[yellow]%}cd%{$fg[green]%}-%{$fg[blue]%}wb %{$fg[magenta]%}${PWD/#$HOME/~} %{$fg[green]%}${vcs_info_msg_0_}%{$fg[red]%}]%{$reset_color%}$ '
-PROMPT='%{$fg[cyan]%}$ %B%{$fg[yellow]%}%n%b %{$fg[blue]%}in ${PWD/#$HOME/~} %B%{$fg[green]%}${vcs_info_msg_0_}%b%{$fg[yellow]%}->>%{$reset_color%} '
-# RPROMPT='%B%{$fg[green]%}${vcs_info_msg_0_}%b' #to show info in the right of the terminal
+PROMPT=' %{$fg[cyan]%}✦ %B%{$fg[yellow]%}⌜%n⌟%b %{$fg[blue]%}in ${PWD/#$HOME/~} %B%{$fg[green]%}${vcs_info_msg_0_}%b%{$fg[yellow]%}⎇ %{$reset_color%} '
+# ⟷ 🡲 ⎇  ⬌ ➚ ⇉ ↳ ↪ ▼ 🟐 ✤ ⌜⌟⌞⌝
+#RPROMPT='%B%{$fg[green]%}${vcs_info_msg_0_}%b' #to show info in the right of the terminal
 # RPROMPT='[%F{yellow}%.%f]'
 export LS_COLORS
 
