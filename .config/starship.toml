@@ -1,0 +1,55 @@
+# Done print a new line at start of the prompt 
+add_newline = true
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = "$cmd_duration $battery"
+
+# make the prompt a one line
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[<<](bold green)"
+error_symbol = "[><](bold red)"
+vicmd_symbol = "[>>](bold yellow)"
+# success_symbol = "[󰜴](bold green)"
+# error_symbol = "[󰧂](bold red)"
+# vimcmd_symbol = '[󰦸](bold yellow)'
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-yellow"
+
+[directory]
+style = "bold blue"
+read_only = " "
+truncation_length = 6
+truncation_symbol = '..</'
+# fish_style_pwd_dir_length	= 1
+
+[cmd_duration]
+disabled = false
+format = '⚡[$duration](bold yellow) '
+
+# Disable the package mode, in the prompt
+[package]
+disabled = true
+
+# it show only if the battery charge is below the 10%
+[battery]
+full_symbol = '󰁹 '
+charging_symbol = '󰂄 '
+discharging_symbol = '󰂃 '
+
+# Style for 0-15% battery capacity.
+[[battery.display]]
+threshold = 15
+style = "bold red"
+
+# Style for 10-30% battery capacity.
+[[battery.display]]
+threshold = 40
+style = "bold yellow"

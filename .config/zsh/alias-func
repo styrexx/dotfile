@@ -1,0 +1,128 @@
+#!/bin/sh
+
+# Get File Using FZF
+vv(){
+  file_path=$(fzf --prompt ' File: ')
+  file_name=$(echo $file_path |  awk -F '/' '{ print $NF }')
+  file_type=$(echo $file_name | awk -F '.' '{print $NF}')
+  if [ $file_path ]
+  then
+    file_type_text=$(file $file_path | awk '{ print $NF }')
+    if [ $file_type_text = text ]; then 
+        nvim $file_path
+    else
+      case $file_type in 
+        pdf)zathura $file_path & disown        ;;
+        jpg||png||svg)eog $file_path          ;;
+        mp4||mkv||webm)mpv $file_path & disown ;;
+        *)echo $file_name
+      esac
+    fi
+  else 
+      echo -e "\e[3;31m Non file Tchose!\e[0m"
+  fi
+}
+
+# Go To Folder using FZF
+cdff () {
+  dir_path=$(find * -type d| fzf --prompt ' Directories: ')
+  if [ $dir_path ]
+  then
+    cd $dir_path
+  else 
+    cd $(pwd)
+  fi
+}
+
+# Go To Seaching word in file 
+zg(){
+  grep_path=$(grep -nsr $1 | fzf --prompt ' TChose: ')
+  file_path=$(echo $grep_path | awk -F ':' '{print $1}')
+  line_numbe=$(echo $grep_path | awk -F ':' '{print $2}')
+  if [ $grep_path ]
+  then
+    nvim $file_path +$line_numbe
+  else 
+      echo -e "\e[3;31m Non file Tchose!\e[0m"
+  fi
+}
+
+##################################
+# Function to count the number of files in the archive
+count_files() {
+    tar tf "$1" | wc -l
+}
+# Function to display a progress bar
+progress_bar() {
+    local total_files=$1
+    local extracted_files=0
+    local progress=0
+    local bar_length=50
+
+    while read -r file; do
+        ((extracted_files++))
+        ((progress = extracted_files * 100 / total_files))
+        ((bar_fill = progress * bar_length / 100))
+
+        printf "["
+        printf "%${bar_fill}s" "#" | tr ' ' '='
+        printf "%$((bar_length - bar_fill))s" "]" | tr ' ' ' '
+        printf " %d%%\r" "$progress"
+    done
+}
+# Extract File
+extract () {
+  total_files=$(count_files "$1")
+
+  if [ -f $1 ]; then
+    case $1 in
+      *.tar.bz2)  tar -vjxf $1                        ;;
+      *.tar.gz)   tar -vzxf $1                        ;;
+      *.tar.xz)   tar -vxJf $1                        ;;
+      *.bz2)      bunzip2 $1                          ;;
+      *.dmg)      hdiutil mount $1                    ;;
+      *.gz)       gunzip $1                           ;;
+      *.tar)      tar -vxf $1                         ;;
+      *.tbz2)     tar -vjxf $1                        ;;
+      *.tgz)      tar -vzxf $1                        ;;
+      *.zip)      unzip $1                            ;;
+      *.ZIP)      unzip $1                            ;;
+      *.pax)      cat $1 | pax -r                     ;;
+      *.pax.Z)    uncompress $1 --stdout | pax -r     ;;
+      *.rar)      unrar x $1                          ;;
+      *.Z)        uncompress $1                       ;;
+      *)          echo "'$1' cannot be extracted/mounted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+##################################
+
+# build a unvaryrment for a File For Front-end dev
+build() {
+  mkdir css js assets
+  touch index.html css/style.css js/main.js
+  cp $HOME/Documents/dev/project/other/cssGeneralRul/normalize.css ./css/
+  cp $HOME/Documents/dev/project/other/fontawesome-free-6.4.0-web/css/all.min.css ./css/
+  cp -r $HOME/Documents/dev/project/other/fontawesome-free-6.4.0-web/webfonts/ ./
+  cp $HOME/Documents/dev/project/other/fontawesome-free-6.4.0-web/js/all.min.js ./js/
+  echo -e "\e[3;1;33m Files & Foleder Hase Bing Created, You Can Go\e[0m"
+  if [ $1 = "btp" ]
+  then
+    cp $HOME/Documents/dev/project/other/bootstrap-5.3.0-dist/css/{bootstrap.min.css,bootstrap.min.css.map} ./css/
+    cp $HOME/Documents/dev/project/other/bootstrap-5.3.0-dist/js/{bootstrap.bundle.min.js,bootstrap.bundle.min.js.map} ./js/
+    echo -e "\e[3;1;33m Width BOOTSTRAP File, You Can Go\e[0m"
+  fi
+}
+
+# Use LF to Switch directories 
+lfcd () {
+  tmp="$(mktemp)"
+  lf -last-dir-path="$tmp" "$@"
+  if [ -f "$tmp" ]; then
+    dir="$(cat "$tmp")"
+    rm -f "$tmp"
+    [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+  fi
+}

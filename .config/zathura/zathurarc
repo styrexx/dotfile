@@ -1,0 +1,41 @@
+# Padding
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1 
+
+# Mapping
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+# map R relate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
+map ; nohlsearch 
+
+## Coloring 
+#bg
+# set recolor-lightcolor "#1d2021"
+set recolor-lightcolor "#282828"
+#fg
+set recolor-darkcolor "#ebdbb2"	
+set recolor "true"
+# set default-bg "#1d2021"
+set default-bg "#282828"
+
+# Input colors
+set inputbar-bg	"#282828"	
+set inputbar-fg	"#fff" 
+
+## Statusbar
+#bg
+set statusbar-bg "#665c54" 
+#fg
+set statusbar-fg "#ebdbb2" 
+
+# Highlit colors
+set highlight-active-color "#d65d0e"
+set highlight-color	"#3a3a3a" 
+set highlight-transparency "0.3"

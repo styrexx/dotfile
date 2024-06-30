@@ -1,0 +1,95 @@
+#!/bin/sh
+
+# nmcli he control the wifi
+# sudo
+alias _s="sudo su"
+# Were I go must
+# alias !="cd $HOME/Documents/code/project/"
+# file Explore aliases
+alias code="cd $HOME/Documents/code/"
+alias project="cd $HOME/Documents/code/project"
+alias styrexx="cd $HOME/Documents/code/styrexx/project-web"
+alias aliasrc="vi $HOME/.config/zsh/aliasrc"
+alias alacrityrc="vi $HOME/.config/alacritty/alacritty.yml"
+alias vimrc="vi $HOME/.config/nvim/init.vim"
+alias tub="cd $HOME/Videos/youtube"
+alias cours="cd $HOME/Documents/code/webDev/cours"
+
+# Define aliases.
+# ==== color prompt ====
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# ==== Navigation ====
+alias ll="ls -Alh"
+alias ls="ls --color"
+alias ..="cd .."
+alias ../="cd ../.."
+alias md="mkdir"
+mcd() {mkdir $1 && cd $1}
+alias tree='tree -A -C -L 3'
+alias rmd="rm -drI"
+alias rmdf="rm -dr"
+alias mv="mv -i"
+alias oo="open ."
+alias :q="exit"
+# alias tree='tree -a -I .git'
+# alias ls="${aliases[ls]:-ls} -A"
+
+# ==== Pakege Manager ====
+pakege=apt-get
+alias i="sudo $pakege install"
+alias ug="sudo $pakege upgrade"
+alias up="sudo $pakege update"
+alias r="sudo $pakege remove"
+alias or="sudo $pakege autoremove"
+alias list="apt list"
+alias fug="sudo $pakege full-upgrade"
+alias q="apt search"
+
+# ==== neovim ====
+alias vi="nvim"
+
+# === git ====
+alias gc="git clone"
+alias gi="git init"
+# alias gst="git status"
+gst() {
+	git status | sed -n '/Your/,/^$/p'
+	git status -s && echo
+	git log --pretty=format:"%Cred%h%Creset - %C(bold blue)<%an>%Creset %s %Cgreen(%cr)%Creset" --date=relative -3 && echo
+}
+alias gad="git add"
+alias gadall="git add --all"
+alias gcm="git commit"
+alias gmm="git commit -m $1"
+alias gdf="git diff"
+alias gp="git push"
+alias gpl="git pull"
+alias gpu="git push -u origin "
+alias gbr="git branch"
+alias grm="git remote"
+alias gsh="git stash"
+alias gshp="git stash pop"
+alias gch="git checkout"
+ggr() {
+	git log --graph --pretty=format:'%Cred%h%Creset -%C(red bold italic)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+}
+# alias Git="/home/danux/./.script/git-script.sh"
+
+### tmux aliases
+alias tmuxnew="tmux new -s"
+alias tmuxkill="tmux kill-session -t"
+alias tmuxrname="tmux rename-session -t"
+alias tmuxgo="tmux attach -t"
+
+# === newsboat ===
+alias ns="newsboat"
+
+# === Zathura ===
+alias zh="zathura"
+
+alias x="echo -e '\e[3;36m -xmodmap true\e[0m'&&xmodmap $HOME/.script/xmodmaprc"
+# alias ls="echo -e '\e[3;36m -file\e[0m' && ls --color"

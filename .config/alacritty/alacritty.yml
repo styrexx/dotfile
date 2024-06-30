@@ -1,0 +1,45 @@
+env:
+  TERM: xterm-256color
+
+window:
+  opacity: 1
+  decorations: none
+  padding:
+    x: 3
+    y: 6
+
+cursor:
+  style:
+    shape: block
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    #shape: Block
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    style: Regular
+
+  bold:
+    family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    style: Bold
+
+  italic:
+    family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    style: Bold Italic
+
+  size: 10.5
+
+import:
+  # - ~/.config/alacritty/themes/tokyo-night.yaml
+  # - ~/.config/alacritty/themes/gruvboxLight-material.yaml
+  - ~/.config/alacritty/themes/gruvbox-material.yaml

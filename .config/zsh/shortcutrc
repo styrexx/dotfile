@@ -1,0 +1,6 @@
+#!/bin/sh
+
+bindkey -s '^o' 'lfcd\n'
+bindkey -s '^n' 'cdff\n'
+bindkey -s '^f' 'vv\n'
+bindkey -s '^g' 'Project\n'
