@@ -5,14 +5,16 @@
 clear
 echo "##### We Download all the program that is not istalled. #####"
 
+read -p "what is the pakage manager for your systeme: " PAKEGE
+
 [ $(command -v alacritty) ] || echo "Downloading alacritty ..."
-apt-get install alacritty
+$PAKEGE install alacritty
 [ $(command -v zsh) ] || echo "Downloading zsh ..."
-apt-get install zsh
+$PAKEGE install zsh
 [ $(command -v tmux) ] || echo "Downloading tmux ..."
-apt-get install tmux
+$PAKEGE install tmux
 [ $(command -v stow) ] || echo "Downloading stow ..."
-apt-get install stow
+$PAKEGE install stow
 
 # installing nvim
 LINKNVIM=https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
