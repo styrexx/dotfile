@@ -1,6 +1,8 @@
 About dotfile
 =============
 
+IMPORTANT: This repo is for linux that use debian
+
 This Repo is provided width my config for tmux, alacritty, zsh, and more
 width shell script for installing this app if don't exist in machine
 
