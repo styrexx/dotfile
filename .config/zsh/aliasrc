@@ -31,7 +31,7 @@ alias md="mkdir"
 mcd() {mkdir $1 && cd $1}
 alias tree='tree -A -C -L 3'
 alias rmd="rm -drI"
-alias rmdf="rm -dr"
+alias rmdf="rm -Rf"
 alias mv="mv -i"
 alias oo="open ."
 alias :q="exit"
