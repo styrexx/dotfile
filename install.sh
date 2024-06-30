@@ -1,6 +1,9 @@
 #!/bin/sh
 
-# alacritty zsh tmux nvim starship stow lf
+# alacritty zsh tmux nvim starship stow
+
+clear
+echo "##### We Download all the program that is not istalled. #####"
 
 [ $(command -v alacritty) ] || echo "Downloading alacritty ..."
 apt-get install alacritty
