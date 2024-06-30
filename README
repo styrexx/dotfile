@@ -1,0 +1,17 @@
+About dotfile
+=============
+
+This Repo is provided width my config for tmux, alacritty, zsh, and more
+width shell script for installing this app if don't exist in machine
+
+Dependency
+- tmux-plug
+- starship (for prompt in zsh)
+
+To uplay all this config you can use stow:
+$ stow .
+and voila
+
+YOU CAN USE IT IF YOU WISH.
+
+# Created in 2024-06-30 by Styrexx/Abdessamad :)
