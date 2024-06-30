@@ -24,8 +24,17 @@ cd instt
 curl -LO $LINKNVIM
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
 rm nvim-linux64.targz
+cd ..
 echo "Downloading nvim DONE"
 
 # Installing starship
 echo "Downloading starship ..."
 curl -sS https://starship.rs/install.sh | sh
+
+# Set your configs
+echo "Set your configs using gnu stow "
+stow .
+
+# Set zsh ase default shell
+echo "Set zsh ase default shell... "
+chsh -s $(which zsh)
