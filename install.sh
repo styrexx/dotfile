@@ -5,7 +5,7 @@
 # Date of building: 2024-06-30
 
 clear
-echo "##### We Download all the program that is not istalled. #####"
+echo "##### We will Download all the program that is not istalled in the System. #####"
 
 read -p "what is the pakage manager for your systeme: " PAKEGE
 
