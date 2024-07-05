@@ -32,9 +32,9 @@ echo "Downloading starship ..."
 curl -sS https://starship.rs/install.sh | sh
 
 # Set your configs
-echo "Set your configs using gnu stow "
+echo "Seting your configs using gnu stow "
 stow .
 
 # Set zsh ase default shell
-echo "Set zsh ase default shell... "
+echo "Seting  zsh ase default shell... "
 chsh -s $(which zsh)
