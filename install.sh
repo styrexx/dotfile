@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# alacritty zsh tmux nvim starship stow
+# Title: A program for autoDownload all dependecy for my dotfile
+# Author: @Styrexx/Abdessamad
+# Date of building: 2024-06-30
 
 clear
 echo "##### We Download all the program that is not istalled. #####"

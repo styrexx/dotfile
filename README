@@ -1,17 +1,20 @@
 About dotfile
 =============
 
-This Repo is provided width my config for tmux, alacritty, zsh, and more
-width shell script for installing this app if don't exist in machine
+This Repo is provided width my config for tmux, alacritty, zsh, and more.
+Width shell script for installing this app if don't exist in machine
 
 Dependency
 - tmux-plug
 - starship (for prompt in zsh)
+- stow for seting dotifle
 
-To uplay all this config you can use stow:
-$ stow .
-and voila
+To use the dotfile you need to:
 
-YOU CAN USE IT IF YOU WISH.
+$ cd dotfile
+$ chmod +x install.sh
+$ ./install.sh
+
+And you are done :)
 
 # Created in 2024-06-30 by Styrexx/Abdessamad :)
